@@ -2,6 +2,7 @@ import React from 'react';
 import AutoPart from './AutoPart';
 
 import Banner from './Banner';
+import BusinessSummary from './BusinessSummary';
 import Car from './Car';
 import Tools from './Tools';
 
@@ -13,6 +14,7 @@ const Home = () => {
             <Tools></Tools>
             <Car></Car>
             <AutoPart></AutoPart>
+            <BusinessSummary></BusinessSummary>
            
         </div>
     );

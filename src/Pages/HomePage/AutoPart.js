@@ -12,9 +12,11 @@ import b_8 from '../../Images/b16.jpg';
 const AutoPart = () => {
     return (
         <div>
-            <div className=' text-3xl font-bold p-10 text-blue-600'>
-                <h2>SELECT AUTO PARTS BY MAKE</h2>
-           </div>
+            <div >
+                <h2 className=' text-3xl font-bold py-5 text-blue-600'>SELECT AUTO PARTS BY MAKE</h2>
+                <p className=' text-1xl font-bold  text-black-600 p-4'>View a selection of our most popular makes</p>
+            </div>
+           
             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-orange-600'>
                 <AutoParts img={b_1} name="AUDI"></AutoParts>
                 <AutoParts img={b_2} name="JAGUAR"></AutoParts>

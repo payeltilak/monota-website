@@ -7,6 +7,7 @@ import Navbar from './Pages/HomePage/Shared/Navbar/Navbar';
 import Footer from './Pages/HomePage/Shared/Footer/Footer';
 import SignUp from './Pages/SignUp/SignUp';
 import Blogs from './Pages/Blogs/Blogs';
+import Portfolio from './Pages/Portfolio/Portfolio';
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/blogs" element={<Blogs/>} />
+        <Route path="/portfolio" element={<Portfolio/>} />
        
         
       

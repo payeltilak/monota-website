@@ -1,5 +1,5 @@
 [
-    {    "id":1,
+    {    
         "name": "LIGHTING",
         "img": "https://i.ibb.co/z4RSWVd/tools-1.jpg",
         "price": "62000",
@@ -9,7 +9,7 @@
        
     },
     {
-        "id": 2,
+        
         "name": "WHEELS & TIRES",
         "img": "https://i.ibb.co/zPXb65J/tools-2.jpg",
         "price": "30000",
@@ -18,7 +18,7 @@
         "availableQuantity": "11200"
     },
     {
-        "id": 3,
+       
         "name": "SMART DEVICES",
         "img": "https://i.ibb.co/gVtpbpw/tools-3.jpg",
         "price": "20000",
@@ -27,7 +27,7 @@
         "availableQuantity": "23000"
     },
     {
-        "id": 4,
+      
         "name": "OIL FLUIDS",
         "img": "https://i.ibb.co/ZTmbpMM/tools-4.jpg",
         "price": "22000",
@@ -36,7 +36,7 @@
         "availableQuantity": "22000"
     },
     {
-        "id": 5,
+        
         "name": "REPLACEMENT",
         "img": "https://i.ibb.co/MhxdMNc/tools-5.jpg",
         "price": "32000",
@@ -45,7 +45,7 @@
         "availableQuantity": "33000"
     },
     {
-        "id": 6,
+        
         "name": "TOOLS & EQUIPMENT",
         "img": "https://i.ibb.co/x5CX7R2/tools-6.jpg",
         "price": "5000",

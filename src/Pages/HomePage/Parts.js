@@ -4,7 +4,7 @@ const Parts = ({tool}) => {
     const { name, img, price, description, minimumOrderQuantity, availableQuantity } = tool;
     return (
         <div className=''>
-            <div class="card w-80 bg-base-100 drop-shadow-2xl g-5 h-full">
+            <div class="card w-80 bg-blue-300 drop-shadow-2xl g-5 h-full">
                 <figure class="px-10 pt-10">
                     <img src={img} alt="Shoes" class="rounded-xl" />
                 </figure>

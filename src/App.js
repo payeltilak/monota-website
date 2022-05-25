@@ -6,6 +6,7 @@ import Login from './Pages/Login/Login';
 import Navbar from './Pages/HomePage/Shared/Navbar/Navbar';
 import Footer from './Pages/HomePage/Shared/Footer/Footer';
 import SignUp from './Pages/SignUp/SignUp';
+import Blogs from './Pages/Blogs/Blogs';
 
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/home" element={<Home/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
+        <Route path="/blogs" element={<Blogs/>} />
        
         
       

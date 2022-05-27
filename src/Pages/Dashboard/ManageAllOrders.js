@@ -16,7 +16,7 @@ const ManageAllOrders = () => {
     }
 
     const handleShift = (id) => {
-        const url = `http://localhost:5000/shifted/${id}`
+        const url = `http://localhost:5000/productshifted/${id}`
         fetch(url, {
             method: 'PATCH',
             headers: {

@@ -28,7 +28,7 @@ const [token]=useToken(user||gUser)
         signInError = <small><p className='text-red-500'>{error?.message || gError?.message || updateError.message}</p></small>
     }
     if (token) {
-        navigate('/appointment')
+        navigate('/')
     }
     if (loading || gLoading || updating) {
         return <Loading></Loading>

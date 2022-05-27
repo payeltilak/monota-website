@@ -11,6 +11,8 @@ import Portfolio from './Pages/Portfolio/Portfolio';
 import DashBoard from './Pages/Dashboard/DashBoard';
 import About from './Pages/About/About';
 import Purchase from './Pages/Purchase/Purchase';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import RequireAuth from './Pages/RequireAuth/RequireAuth';
 // import RequireAuth from './Pages/RequireAuth/RequireAuth';
 
 
@@ -28,6 +30,9 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/blogs" element={<Blogs/>} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/dashboard" element={<RequireAuth><DashBoard /></RequireAuth>} >
+          <Route index element={<MyOrders/>}></Route>
+        </Route>
         {/* <Route path="/about" element={<About />} /> */}
         
         {/* <Route path="/dashboard" element={

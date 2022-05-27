@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../HomePage/Shared/Loading';
 
@@ -13,7 +14,6 @@ const Purchase = () => {
     const phoneRef = useRef('')
     const [price, setPrice] = useState(0)
     const [quantityError, setQuantityError] = useState('')
-
     const { data: tool, isLoading, refetch } = useQuery('tool', () => fetch(`http://localhost:5000/tool/${id}`, {
         method: "GET",
         headers: {
@@ -48,11 +48,11 @@ const Purchase = () => {
             price: (tool.price * inputQuantity)
         }
         if (inputQuantity < tool.minimumOrder) {
-            setQuantityError('Minimum order reqiure ')
+            setQuantityError('Please order minimum quantity ')
 
         }
         else if (inputQuantity > tool.quantity) {
-            setQuantityError('Maximum order exceeded')
+            setQuantityError('Out of quantity')
 
         }
         else {
@@ -60,7 +60,7 @@ const Purchase = () => {
             fetch('http://localhost:5000/order', {
                 method: "PUT",
                 headers: {
-                    // "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
+                    "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
                     "content-type": "application/json"
                 },
                 body: JSON.stringify(order)
@@ -70,6 +70,8 @@ const Purchase = () => {
                     res.json()
                 })
                 .then(data => {
+                    // toast.success("Order confirmed")
+                    console.log('Order confirmed');
                     refetch()
                 })
 
@@ -94,12 +96,12 @@ const Purchase = () => {
                 <label className="label">
                     <span className="label-text">Name</span>
                 </label>
-                <input type="text" readOnly value={user.displayName} placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                <input type="text" readOnly value={user?.displayName} placeholder="Type here" className="input input-bordered w-full max-w-xs" />
                 <label className="label">
                     <span className="label-text">Email</span>
 
                 </label>
-                <input type="text" readOnly value={user.email} placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                <input type="text" readOnly value={user?.email} placeholder="Type here" className="input input-bordered w-full max-w-xs" />
                 <label className="label">
                     <span className="label-text">Address</span>
                 </label>

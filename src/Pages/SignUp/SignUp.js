@@ -3,12 +3,13 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../../hooks/useToken';
 import Loading from '../HomePage/Shared/Loading';
 
 
 const SignUp = () => {
 
-    const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate();
 
@@ -19,26 +20,23 @@ const SignUp = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+const [token]=useToken(user||gUser)
+
 
     let signInError;
-    if (error || gerror || updateError) {
-        signInError = <small><p className='text-red-500'>{error?.message || gerror?.message || updateError.message}</p></small>
+    if (error || gError || updateError) {
+        signInError = <small><p className='text-red-500'>{error?.message || gError?.message || updateError.message}</p></small>
     }
-
-
-    if (user || guser) {
-        console.log(user);
+    if (token) {
+        navigate('/appointment')
     }
-    if (loading || gloading || updating) {
+    if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
 
     const onSubmit = async data => {
-        console.log(data);
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        console.log('Update done');
-        navigate('/appointment')
     }
 
 
@@ -69,8 +67,7 @@ const SignUp = () => {
 
                                     {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>
                                     }
-                                    {/* {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>
-                                    } */}
+                                   
                                 </label>
 
                             </div>

@@ -4,21 +4,21 @@ import Parts from './Parts';
 import Loading from './Shared/Loading';
 
 const Tools = () => {
-    // const {data: tools, isLoading} = useQuery('product', () =>
+    const {data: tools, isLoading} = useQuery('product', () =>
   
-    //     fetch('http://localhost:5000/product')
-    //     .then(res => res.json())
-    // )
-    // if (isLoading) {
-    //     return <Loading></Loading>
-    // }
-    const [tools, setTools] = useState([]);
-
-    useEffect(() => {
         fetch('http://localhost:5000/product')
         .then(res => res.json())
-        .then(data => setTools(data))
-    },[])
+    )
+    if (isLoading) {
+        return <Loading></Loading>
+    }
+    // const [tools, setTools] = useState([]);
+
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/product')
+    //     .then(res => res.json())
+    //     .then(data => setTools(data))
+    // },[])
     
     
     return (

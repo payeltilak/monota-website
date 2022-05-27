@@ -10,6 +10,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import DashBoard from './Pages/Dashboard/DashBoard';
 import About from './Pages/About/About';
+import Purchase from './Pages/Purchase/Purchase';
 // import RequireAuth from './Pages/RequireAuth/RequireAuth';
 
 
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home/>} />
+        <Route path="/purchase/:id" element={<Purchase></Purchase>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/blogs" element={<Blogs/>} />

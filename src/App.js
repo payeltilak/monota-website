@@ -13,6 +13,8 @@ import About from './Pages/About/About';
 import Purchase from './Pages/Purchase/Purchase';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import { Toaster } from 'react-hot-toast';
+import AddReview from './Pages/Dashboard/AddReview';
 // import RequireAuth from './Pages/RequireAuth/RequireAuth';
 
 
@@ -32,6 +34,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/dashboard" element={<RequireAuth><DashBoard /></RequireAuth>} >
           <Route index element={<MyOrders/>}></Route>
+          <Route path='review' element={<AddReview/>}></Route>
         </Route>
         {/* <Route path="/about" element={<About />} /> */}
         
@@ -43,7 +46,7 @@ function App() {
        
         </Routes>
       <Footer></Footer>
-   
+      <Toaster />
     </div>
   );
 }

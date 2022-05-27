@@ -1,20 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
+import React from 'react';
+import useTools from '../../hooks/useTools';
 import Parts from './Parts';
 import Loading from './Shared/Loading';
 
 const Tools = () => {
-    const {data: tools, isLoading} = useQuery('product', () =>
-  
-        fetch('http://localhost:5000/product')
-        .then(res => res.json())
-    )
+   const [tools,isLoading]=useTools()
     if (isLoading) {
         return <Loading></Loading>
     }
   
-    
-    
     return (
         <div>
             <div className='text-center my-10'>

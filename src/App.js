@@ -16,6 +16,8 @@ import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import { Toaster } from 'react-hot-toast';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import Users from './Pages/Dashboard/User';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 // import RequireAuth from './Pages/RequireAuth/RequireAuth';
 
 
@@ -34,9 +36,11 @@ function App() {
         <Route path="/blogs" element={<Blogs/>} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/dashboard" element={<RequireAuth><DashBoard /></RequireAuth>} >
-          <Route index element={<MyOrders/>}></Route>
+          <Route index element={<MyProfile/>}></Route>
+          <Route path='myorders' element={<MyOrders/>}></Route>
           <Route path='review' element={<AddReview/>}></Route>
-          <Route path='profile' element={<MyProfile/>}></Route>
+          <Route path='users' element={<Users/>}></Route>
+          <Route path='manageorder' element={<ManageAllOrders/>}></Route>
         </Route>
         {/* <Route path="/about" element={<About />} /> */}
         

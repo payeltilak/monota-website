@@ -1,5 +1,5 @@
 import React from 'react';
-import b_1 from '../../Images/b1.jpg';
+
 
 
 const AutoParts = ({img,name}) => {
@@ -13,7 +13,7 @@ const AutoParts = ({img,name}) => {
                         <h2 class="card-title text-2xl font-bold">{name}</h2>
 
                     </div>
-                    <figure><img src={img} alt="Shoes" /></figure>
+                    <figure><img src={img} alt="" /></figure>
                 </div>
             </div>
     

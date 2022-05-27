@@ -17,7 +17,7 @@ const AutoPart = () => {
                 <p className=' text-1xl font-bold  text-black-600 p-4'>View a selection of our most popular makes</p>
             </div>
            
-            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-orange-600'>
+            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-orange-600 mx-auto'>
                 <AutoParts img={b_1} name="AUDI"></AutoParts>
                 <AutoParts img={b_2} name="JAGUAR"></AutoParts>
                 <AutoParts img={b_3} name="MERCEDES"></AutoParts>

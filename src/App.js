@@ -8,6 +8,10 @@ import Footer from './Pages/HomePage/Shared/Footer/Footer';
 import SignUp from './Pages/SignUp/SignUp';
 import Blogs from './Pages/Blogs/Blogs';
 import Portfolio from './Pages/Portfolio/Portfolio';
+import DashBoard from './Pages/Dashboard/DashBoard';
+import About from './Pages/About/About';
+// import RequireAuth from './Pages/RequireAuth/RequireAuth';
+
 
 
 
@@ -21,11 +25,16 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/blogs" element={<Blogs/>} />
-        <Route path="/portfolio" element={<Portfolio/>} />
-       
+        <Route path="/portfolio" element={<Portfolio />} />
+        {/* <Route path="/about" element={<About />} /> */}
         
-      
-      </Routes>
+        {/* <Route path="/dashboard" element={
+          <RequireAuth>
+            <DashBoard></DashBoard>
+          </RequireAuth>} /> */}
+
+       
+        </Routes>
       <Footer></Footer>
    
     </div>

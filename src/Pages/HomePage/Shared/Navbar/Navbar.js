@@ -17,14 +17,15 @@ const Navbar = () => {
         <li><Link to='/home'>Home</Link></li>
         <li><Link to='/purchase'>Purchase</Link></li>
         <li><Link to='/review'>Review</Link></li>
-        <li><Link to='/about'>About</Link></li>
+        {/* <li><Link to='/about'>About</Link></li> */}
         <li><Link to='/portfolio'>Portfolio</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
         {
             user && <li><Link to='/dashboard'>DashBoard</Link></li>
         }
         <li>{user ? <button className="btn btn-ghost" onClick={logout}>Sign Out</button> : <Link to='/login'>Login</Link>}</li>
-        <li><Link to='/signUp'>Sign Up</Link></li>
+        <li>{user ? <p>{user.displayName}</p> : <Link to='/login'>Login</Link>}</li>
+        
         
 
     </>

@@ -21,8 +21,8 @@ const Reviews = () => {
 
     return (
         <div>
-            <h2>review={reviews.length}</h2>
-            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
+            <h2 className='font-bold text-3xl py-10'>Review</h2>
+            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-8'>
                 {
                     result.slice(-result.length).map(review => <Review
                     key={review._id} userReview={review}

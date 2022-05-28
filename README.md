@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 # Project Name : MONOTA
-##  Livesite Link : [MONOTA](https://electronics-wirehouse-client.web.app/ "livesite")
+##  Livesite Link : [MONOTA](https://monota-cd720.web.app/ "livesite")
 
 ##  Description
 ### At first  create client side and Server side.My projects is about  MONOTA manufacture system.all products display in manage inventory page.We can add all of the product in MONOTA manufacture.

@@ -37,8 +37,9 @@ const ratingRef=useRef('')
         <div className='mt-12 ml-8'>
             <form onSubmit={handleAddReview} >
                 <textarea name='review' className="textarea textarea-bordered" placeholder="Please insert your review"></textarea>
-                <input ref={ratingRef} type="number" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-
+                <br/>
+                <input ref={ratingRef} type="number" placeholder="Type here" class="input input-bordered w-full max-w-xs my-5" />
+<br/>
                 <input type="submit" value='Add Review' className="input input-bordered w-full max-w-xs btn btn-primary" />
             </form>
         </div>

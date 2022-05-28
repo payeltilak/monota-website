@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 import Loading from '../HomePage/Shared/Loading';
 
 const ManageAllOrders = () => {
-    const { data: allOrders, isLoading, refetch } = useQuery('allorders', () => fetch('http://localhost:5000/allorders', {
+    const { data: allOrders, isLoading, refetch } = useQuery('allorders', () => fetch('https://blooming-ridge-15551.herokuapp.com/allorders', {
         method: 'GET',
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -16,7 +16,7 @@ const ManageAllOrders = () => {
     }
 
     const handleShift = (id) => {
-        const url = `http://localhost:5000/productshifted/${id}`
+        const url = `https://blooming-ridge-15551.herokuapp.com/productshifted/${id}`
         fetch(url, {
             method: 'PATCH',
             headers: {
@@ -51,7 +51,7 @@ const ManageAllOrders = () => {
                                 <td>{order.email}</td>
                                 <td>{order.toolName}</td>
                                 <td>{order.price}/{order.paid === true && <small className='text-success'>Paid</small>}</td>
-                                {(order.paid === true && !order.shifted) && <td><button onClick={() => handleShift(order._id)} className='btn btn-xs btn-success'>Ready to Shift</button></td>}
+                                {(order.paid === true && !order.shifted) && <td><button onClick={() => handleShift(order._id)} className='btn btn-xs btn-success bg-pink-700'>Ready to Shift</button></td>}
                                 <td>{order.shifted && <p className='text-primary'>Shifted</p>}</td>
                             </tr>)
                         }

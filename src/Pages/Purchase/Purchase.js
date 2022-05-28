@@ -14,7 +14,7 @@ const Purchase = () => {
     const phoneRef = useRef('')
     const [price, setPrice] = useState(0)
     const [quantityError, setQuantityError] = useState('')
-    const { data: tool, isLoading, refetch } = useQuery('tool', () => fetch(`http://localhost:5000/tool/${id}`, {
+    const { data: tool, isLoading, refetch } = useQuery('tool', () => fetch(`https://blooming-ridge-15551.herokuapp.com/tool/${id}`, {
         method: "GET",
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -57,7 +57,7 @@ const Purchase = () => {
         }
         else {
             setQuantityError('')
-            fetch('http://localhost:5000/order', {
+            fetch('https://blooming-ridge-15551.herokuapp.com/order', {
                 method: "PUT",
                 headers: {
                     "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -82,14 +82,17 @@ const Purchase = () => {
     return (
         <div className='grid sm:grid-cols-1 lg:grid-cols-2 mt-12'>
 
-            <div className="card lg:card-side bg-base-100 w-4/5 mx-auto">
-                <figure><img src={tool.img} alt="Album" className='mb-auto' /></figure>
-                <div className="mx-8">
-                    <h2 className="text-xl text-bold text-primary my-3">Product Name: {tool.name}</h2>
-                    <p className='text-lg'><span className='font-bold'>Description:</span> {tool.description}</p>
-                    <p className='font-bold text-lg'>Price: ${tool.price}/Unit</p>
-                    <p className='font-bold text-lg'>Quantity: {tool.quantity} Unit</p>
-                    <p className='font-bold text-lg'>Minimum Order: {tool.minimumOrder} Unit</p>
+            <div class="card w-80 bg-blue-300 drop-shadow-2xl g-5 h-full ml-20">
+                <figure class="px-10 pt-10">
+                    <img src={tool.img} alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title text-blue-600">{tool.name}</h2>
+                    <h3 className='text-1xl font-bold'>${price}</h3>
+                    <h4 className='text-1xl font-bold'>Minimum Order Quantity : <small>{tool.minimumOrder} </small></h4>
+                    <h4 className='text-1xl font-bold'>Available Quantity : <small>{tool.quantity}</small></h4>
+                    <p>{tool.description.slice(0, 100)}...</p>
+                    
                 </div>
             </div>
             <form onSubmit={placeOrder} className="form-control w-full max-w-xs mr-auto">
@@ -118,7 +121,7 @@ const Purchase = () => {
                     quantityError ? <p>{quantityError}</p> : <p>{`Subtotal: ${price}`}</p>
                 }
                 {/* <p className='text-red-500'>{quantityError ? `${quantityError}` : <p></p>}</p> */}
-                <input type="submit" placeholder='' value='Place Order' className="input input-bordered w-full max-w-xs mt-5 btn btn-primary" />
+                <input type="submit" placeholder='' value=' Order' className="input input-bordered w-full max-w-xs mt-5 btn btn-secondary" />
             </form>
         </div>
     );

@@ -7,7 +7,7 @@ import UserRow from './UserRow';
 const Users = () => {
     const [user, setUser] = useState(null)
 
-    const { data: users, isLoading, refetch } = useQuery('alltools', () => fetch('http://localhost:5000/alluser', {
+    const { data: users, isLoading, refetch } = useQuery('alltools', () => fetch('https://blooming-ridge-15551.herokuapp.com/alluser', {
         method: 'GET',
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`

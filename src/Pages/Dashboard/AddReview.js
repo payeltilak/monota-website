@@ -18,7 +18,7 @@ const ratingRef=useRef('')
             rating,
             review
         }
-        fetch('http://localhost:5000/addreview', {
+        fetch('https://blooming-ridge-15551.herokuapp.com/addreview', {
             method: "POST",
             headers: {
                 authorization:`Bearer ${localStorage.getItem("accessToken")}`,

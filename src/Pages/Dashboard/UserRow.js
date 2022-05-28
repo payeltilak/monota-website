@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 
 const UserRow = ({ user, index, refetch, setUser }) => {
     const makeAdmin = (email) => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://blooming-ridge-15551.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 "content-type":"application/json",

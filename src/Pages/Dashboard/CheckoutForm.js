@@ -16,7 +16,7 @@ const CheckoutForm = ({ tool }) => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://blooming-ridge-15551.herokuapp.com/create-payment-intent', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -87,7 +87,7 @@ const CheckoutForm = ({ tool }) => {
                 toolId: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://blooming-ridge-15551.herokuapp.com/order/${_id}`, {
                 method: "PATCH",
                 headers: {
                     "content-type": "application/json",

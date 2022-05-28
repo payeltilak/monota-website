@@ -1,5 +1,29 @@
 # Getting Started with Create React App
 
+# Project Name : MONOTA
+##  Livesite Link : [MONOTA](https://electronics-wirehouse-client.web.app/ "livesite")
+
+##  Description
+### At first  create client side and Server side.My projects is about  MONOTA manufacture system.all products display in manage inventory page.We can add all of the product in MONOTA manufacture.
+
+## Feature
+
+* connecting server side with client side
+
+* connecting server with mongodb
+
+* using daisi UI
+
+* using tailwind.  
+
+* Maintain folder structure.
+
+* react router uses.
+
+* data will be inserted in mongodb when we add product from client side
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

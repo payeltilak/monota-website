@@ -7,10 +7,12 @@ import { useForm } from "react-hook-form";
 import Loading from '../HomePage/Shared/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
+import { getValue } from '@testing-library/user-event/dist/utils';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
+
 
     const [
         signInWithEmailAndPassword,

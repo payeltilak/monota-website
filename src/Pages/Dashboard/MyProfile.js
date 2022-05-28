@@ -42,7 +42,7 @@ const MyProfile = () => {
                         linkedin
                     }
 
-                    fetch(`http://localhost:5000/updateduser?email=${user.email}`, {
+                    fetch(`https://blooming-ridge-15551.herokuapp.com/updateduser?email=${user.email}`, {
                         method: "PUT",
                         headers: {
                             'content-type': 'application/json',
@@ -53,11 +53,11 @@ const MyProfile = () => {
                         .then(res => res.json())
                         .then(inserted => {
                             if (inserted.acknowledged) {
-                                toast.success("Updated Profile successfully")
+                                toast.success("Successfully updated Profile ")
                                 reset()
                             }
                             else {
-                                toast.error("Failed to update")
+                                toast.error("Failed to update profile")
                             }
                         })
                 }
@@ -67,7 +67,7 @@ const MyProfile = () => {
     }
 
 
-    const { data: displayUser, isLoading } = useQuery('user', () => fetch(`http://localhost:5000/user?email=${user.email}`, {
+    const { data: displayUser, isLoading } = useQuery('user', () => fetch(`https://blooming-ridge-15551.herokuapp.com/user?email=${user.email}`, {
         method: "GET",
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`,
@@ -78,7 +78,7 @@ const MyProfile = () => {
         return <Loading />
     }
     return (
-        <div className='grid sm:grid-cols-1 lg:grid-cols-2'>
+        <div className='grid sm:grid-cols-1 lg:grid-cols-3'>
             <div className='text-center mt-16 bg-slate-100 shadow-lg rounded-lg'>
                 <div className="avatar mt-8">
                     <div className="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 my-5">

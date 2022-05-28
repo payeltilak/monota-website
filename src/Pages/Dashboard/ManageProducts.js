@@ -12,7 +12,7 @@ const ManageProducts = () => {
     const handleDelete = (id) => {
         const confirm = window.confirm("Are you sure?")
         if (confirm) {
-            const url = `http://localhost:5000/deletetool/${id}`
+            const url = `https://blooming-ridge-15551.herokuapp.com/deletetool/${id}`
             fetch(url, {
                 method: "DELETE",
                 headers: {
@@ -23,7 +23,7 @@ const ManageProducts = () => {
                 .then(res => res.json())
                 .then(data => {
                     refetch()
-                    toast.success("Item Deleted Successfully")
+                    toast.success(" Deleted item Successfully")
                     console.log(data);
                 })
         }

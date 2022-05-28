@@ -1,8 +1,10 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../HomePage/Shared/Loading';
 import OrderRow from './OrderRow';
 
 const MyOrders = () => {
@@ -13,7 +15,7 @@ const MyOrders = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/myorder?email=${user?.email}`, {
+        fetch(`https://blooming-ridge-15551.herokuapp.com/myorder?email=${user?.email}`, {
             method: "GET",
             headers: {
                 "authorization": `Bearer ${localStorage.getItem('accessToken')}`,

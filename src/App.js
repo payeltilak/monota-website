@@ -33,8 +33,10 @@ function App() {
    <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home/>} />
-        <Route path="/purchase/:id" element={<Purchase></Purchase>} />
+        <Route path="/home" element={<Home />} />
+      
+        <Route path="/purchase/:id" element={<RequireAuth><Purchase/></RequireAuth>} />
+        
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/blogs" element={<Blogs/>} />
